@@ -1,0 +1,16 @@
+<form class="form-signin">
+	<div style="color: red;" [innerHTML]=loginError></div>
+	<label for="inputUserName" class="sr-only">User name</label>
+	<input type="text" [(ngModel)]="user.userName" name="userName" id="inputUserName" class="form-control" placeholder="User name"
+	 required="" autofocus="">
+	<br />
+	<label for="inputPassword" class="sr-only">Password</label>
+	<input type="password" [(ngModel)]="user.password" name="password" id="inputPassword" class="form-control" placeholder="Password"
+	 required="">
+	<div class="checkbox">
+		<label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+	</div>
+	<button class="btn btn-lg btn-primary btn-block" type="submit" (click)="doSignIn()">Sign in</button>
+</form>
