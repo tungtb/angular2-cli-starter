@@ -16,13 +16,13 @@ export class CoreService {
 		this.baseUrl = Config.apiUrl;
 	}
 
-	public post(uri: string, bodyParam: object, url?: string, options?: RequestOptionsArgs) {
+	public post(uri: string, bodyParam: object, timeout?:number, url?: string, options?: RequestOptionsArgs) {
 		let postUrl = this.baseUrl + uri;
 		if (!!url) postUrl = url;
-		return this._request(RequestMethod.Post, postUrl, $.param(bodyParam), options);
+		return this._request(RequestMethod.Post, postUrl, $.param(bodyParam), timeout, options);
 	}
 
-	private _request(method: RequestMethod, url: string, body?: string, options?: RequestOptionsArgs): Observable<Response> {
+	private _request(method: RequestMethod, url: string, body?: string, timeoutParam?:number, options?: RequestOptionsArgs): Observable<Response> {
 		let requestOptions = new RequestOptions(Object.assign({
 			method: method,
 			url: url,
@@ -36,6 +36,7 @@ export class CoreService {
 
 		return Observable.create((observer) => {
 			this._http.request(new Request(requestOptions))
+				.timeoutWith(timeoutParam || 30000, Observable.throw(new Error('Http Timeout Error')))
 				.map(res => {
 					return this.processResponseData(res);
 				})
