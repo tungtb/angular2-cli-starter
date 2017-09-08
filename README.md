@@ -2,17 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
-# Generator
+## Generator
 
-Component	ng g component path/my-new-component
-Directive	ng g directive path/my-new-directive
-Pipe	    ng g pipe path/my-new-pipe
-Service	    ng g service path/my-new-service
-Class	    ng g class path/my-new-class
-Guard	    ng g guard path/my-new-guard
-Interface	ng g interface/path my-new-interface
-Enum	    ng g enum path/my-new-enum
-Module	    ng g module path/my-module
+- <strong>Component</strong>	ng g component path/my-new-component
+- <strong>Directive</strong>	ng g directive path/my-new-directive
+- <strong>Pipe</strong>	        ng g pipe path/my-new-pipe
+- <strong>Service</strong>	    ng g service path/my-new-service
+- <strong>Class</strong>	    ng g class path/my-new-class
+- <strong>Guard</strong>	    ng g guard path/my-new-guard
+- <strong>Interface</strong>	ng g interface/path my-new-interface
+- <strong>Enum</strong>	        ng g enum path/my-new-enum
+- <strong>Module</strong>	    ng g module path/my-module
 
 Ex: 
 - ng g module modules/settings # generating settings module.
