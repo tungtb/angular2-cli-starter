@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { InfiniteScrollDirective } from './directives/infinite-scroll.directive';
 import { DisableButtonDirective } from './directives/disable-button.directive';
 import { GenderPipe } from './pipes/gender.pipe';
@@ -9,6 +8,6 @@ import { GenderPipe } from './pipes/gender.pipe';
 
 	],
 	declarations: [InfiniteScrollDirective, DisableButtonDirective, GenderPipe],
-	exports: [InfiniteScrollDirective, DisableButtonDirective, GenderPipe, FormsModule]
+	exports: [InfiniteScrollDirective, DisableButtonDirective, GenderPipe]
 })
 export class SharedModule { }

@@ -1,5 +1,25 @@
-<p>
-  news works!
-</p>
+<span defaultOverlayTarget></span>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="row">
+				<div infiniteScroll (scrolly)="updateList();" style="width: 500px; height: 300px;border: 1px solid #ccc;overflow: auto;">
+					<div *ngFor="let item of users; let i = index">
+						<a routerLink="{{item.id}}">
+							{{item.id}}: {{item.name}}
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+        
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>
 <a [routerLink]=" ['detail'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Go to News detail</a>
 <!-- <router-outlet></router-outlet> -->

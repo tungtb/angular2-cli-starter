@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CookieModule } from 'ngx-cookie';
-
-import { SharedModule } from '../shared/shared.module';
 
 import { CoreRoutingModule } from './core-routing.module';
 import { HomeComponent } from './components/home/home.component';
@@ -21,9 +20,9 @@ import { HomeDetailComponent } from './components/home-detail/home-detail.compon
 @NgModule({
 	imports: [
 		CommonModule,
+		FormsModule,
 		HttpModule,
 		CookieModule.forRoot(),
-		SharedModule,
 		CoreRoutingModule
 	],
 	declarations: [HomeComponent, LoginComponent, NavbarComponent, NoContentComponent, HomeDetailComponent],
