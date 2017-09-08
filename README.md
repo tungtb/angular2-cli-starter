@@ -2,6 +2,22 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
+# Generator
+
+Component	ng g component path/my-new-component
+Directive	ng g directive path/my-new-directive
+Pipe	    ng g pipe path/my-new-pipe
+Service	    ng g service path/my-new-service
+Class	    ng g class path/my-new-class
+Guard	    ng g guard path/my-new-guard
+Interface	ng g interface/path my-new-interface
+Enum	    ng g enum path/my-new-enum
+Module	    ng g module path/my-module
+
+Ex: 
+- ng g module modules/settings # generating settings module.
+- ng g component modules/news/components/new-detail  # generating NewDetailComponent inside 'components' directory of the news module.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
