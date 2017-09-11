@@ -3,20 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BaseComponent } from './components/base/base.component';
+import { NoContentComponent } from './components/no-content/no-content.component';
 
 /* Feature Modules */
 import { CoreModule } from './modules/core/core.module';
+import { SharedModule } from './modules/shared/shared.module';
+import { HomeModule } from './modules/home/home.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    CoreModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		BaseComponent,
+		NoContentComponent
+	],
+	imports: [
+		BrowserModule,
+		CoreModule,
+		SharedModule,
+		HomeModule,
+		AppRoutingModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { Location } from '@angular/common';
-import { UserService } from '../../services/user.service';
-import { LoadingService } from '../../services/loading.service';
+import { UserService } from '../../../../services/user.service';
+import { LoadingService } from '../../../../services/loading.service';
 
 @Component({
 	selector: 'app-login',
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
 						this.loginError = res['result']['error']['message']
 					} else {
 						this.UserService.setCookieUserInfo(res['result']);
-						this.Router.navigate(['']);
+						this.Router.navigate(['home']);
 					}
 				}, (err) => {
 					this.LoadingService.hideLoading("body");

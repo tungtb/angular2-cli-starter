@@ -11,25 +11,21 @@
 			<a class="navbar-brand" href="#">Project name</a>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
-			<ul class="nav navbar-nav" *ngIf="isLoggedIn();else NotLogin">
+			<ul class="nav navbar-nav">
 				<li class="active">
-					<a [routerLink]=" ['./home'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+					<a [routerLink]=" ['../home'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
 				</li>
 				<li>
-					<a [routerLink]=" ['./about'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About</a>
+					<a [routerLink]=" ['../about'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About</a>
 				</li>
 				<li>
-					<a [routerLink]=" ['./news'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">News</a>
+					<a [routerLink]=" ['../news'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">News</a>
 				</li>
 				<li>
+					<!-- <a [routerLink]=" ['../login'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login</a> -->
 					<a href="#" (click)="doLogout()">Logout</a>
 				</li>
 			</ul>
-			<ng-template #NotLogin>
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Login</a></li>
-				</ul>
-			</ng-template>
 		</div>
 	</div>
 </nav>

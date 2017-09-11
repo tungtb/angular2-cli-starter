@@ -8,7 +8,8 @@ const routes: Routes = [
 		path: '',
 		component: NewsComponent,
 		// children: [
-		// 	{ path: 'detail', component: NewsDetailComponent } // using with <router-outlet></router-outlet> in NewsComponent
+		// 	{ path: ':id', component: NewsDetailComponent }, // using with <router-outlet></router-outlet> in NewsComponent
+		// 	{ path: 'detail', component: NewsDetailComponent } 
 		// ]
 	},
 	{

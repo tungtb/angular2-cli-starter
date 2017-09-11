@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import { CoreService } from "./core.service";
 import { Http } from "@angular/http";
-import { Router } from '@angular/router';
 
 @Injectable()
 export class UserService extends CoreService {
@@ -11,8 +10,7 @@ export class UserService extends CoreService {
 
     constructor(
         public Http: Http,
-        private CookieService: CookieService,
-        private Router: Router
+        private CookieService: CookieService
     ) {
         super(Http);
         this.initData();
@@ -44,9 +42,8 @@ export class UserService extends CoreService {
         return this.post('user/login', params);
     }
 
-    public logout(linkTo = '/login') {
+    public logout() {
         this.CookieService.remove('userSession');
-        this.Router.navigate([linkTo]);
     }
 
     public setCookieUserInfo(userData) {

@@ -1,20 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingService } from '../../../core/services/loading.service';
-import { UserService } from '../../../core/services/user.service';
+import { Router } from '@angular/router';
+import { BaseComponent } from '../../../../components/base/base.component';
+import { LoadingService } from '../../../../services/loading.service';
+import { UserService } from '../../../../services/user.service';
 
 @Component({
 	selector: 'app-news',
 	templateUrl: './news.component.html',
 	styleUrls: ['./news.component.scss']
 })
-export class NewsComponent implements OnInit {
+export class NewsComponent extends BaseComponent implements OnInit {
 
 	public users = [];
 
 	constructor(
-		private LoadingService: LoadingService,
-		private UserService: UserService
+		public Router: Router,
+		public UserService: UserService,
+		private LoadingService: LoadingService
 	) {
+		super(Router, UserService);
 		this.users = this.UserService.get('userList');
 	}
 

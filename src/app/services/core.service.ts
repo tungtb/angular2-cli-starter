@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
-import { Config } from "./config/config";
+import { Config } from "../config/config";
 declare var $: any;
 
 @Injectable()

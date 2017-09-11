@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { NoContentComponent } from './modules/core/components/no-content/no-content.component';
+import { NoContentComponent } from './components/no-content/no-content.component';
 
 const routes: Routes = [
-	{ path: '', redirectTo: 'home', pathMatch: 'full' },
+	{ path: '', redirectTo: 'login', pathMatch: 'full' },
 	{ path: 'news', loadChildren: './modules/news/news.module#NewsModule' },
 	{ path: '**', component: NoContentComponent },
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes, {useHash: true})],
+	imports: [RouterModule.forRoot(routes, { useHash: true })],
 	exports: [RouterModule]
 })
 export class AppRoutingModule { }

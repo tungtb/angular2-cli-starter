@@ -5,17 +5,14 @@ import { HttpModule } from '@angular/http';
 import { CookieModule } from 'ngx-cookie';
 
 import { CoreRoutingModule } from './core-routing.module';
-import { HomeComponent } from './components/home/home.component';
+
 import { LoginComponent } from './components/login/login.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { NoContentComponent } from './components/no-content/no-content.component';
 
 /**
  * Service
  */
-import { UserService } from './services/user.service';
-import { LoadingService } from './services/loading.service';
-import { HomeDetailComponent } from './components/home-detail/home-detail.component';
+import { UserService } from '../../services/user.service';
+import { LoadingService } from '../../services/loading.service';
 
 @NgModule({
 	imports: [
@@ -25,8 +22,8 @@ import { HomeDetailComponent } from './components/home-detail/home-detail.compon
 		CookieModule.forRoot(),
 		CoreRoutingModule
 	],
-	declarations: [HomeComponent, LoginComponent, NavbarComponent, NoContentComponent, HomeDetailComponent],
-	exports: [HomeComponent, LoginComponent, NavbarComponent, NoContentComponent],
+	declarations: [LoginComponent],
+	exports: [LoginComponent],
 	providers: [UserService, LoadingService]
 })
 export class CoreModule { }

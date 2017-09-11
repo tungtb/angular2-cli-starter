@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from './modules/core/services/user.service';
+import { UserService } from './services/user.service';
 
 @Component({
 	selector: 'app-root',
@@ -22,7 +22,7 @@ export class AppComponent {
 		this.userLoginData = this.UserService.getCookieUserInfo();
 		console.log("AppComponent checkLogin", this.userLoginData);
 		if (!this.userLoginData) {
-			this.Router.navigate(['/login']);
+			this.Router.navigate(['login']);
 		}
 	}
 }

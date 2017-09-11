@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../../../services/user.service';
 
 @Component({
 	selector: 'app-navbar',
@@ -18,12 +18,9 @@ export class NavbarComponent implements OnInit {
 		console.log("NavbarComponent Init");
 	}
 
-	isLoggedIn() {
-		return this.UserService.getCookieUserInfo() ? true : false;
-	}
-
 	doLogout() {
 		this.UserService.logout();
+		this.Router.navigate(['/login']);
 	}
 
 }
