@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CookieModule } from 'ngx-cookie';
 
-import { CoreRoutingModule } from './core-routing.module';
 
-import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from '../../services/auth-guard.service';
+
+import { CoreRoutingModule } from './core-routing.module';
 
 /**
  * Service
@@ -22,8 +23,8 @@ import { LoadingService } from '../../services/loading.service';
 		CookieModule.forRoot(),
 		CoreRoutingModule
 	],
-	declarations: [LoginComponent],
-	exports: [LoginComponent],
-	providers: [UserService, LoadingService]
+	declarations: [],
+	exports: [],
+	providers: [AuthGuard, UserService, LoadingService]
 })
 export class CoreModule { }

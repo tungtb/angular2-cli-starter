@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Location } from '@angular/common';
-import { UserService } from '../../../../services/user.service';
-import { LoadingService } from '../../../../services/loading.service';
+import { UserService } from '../../services/user.service';
+import { LoadingService } from '../../services/loading.service';
 
 @Component({
 	selector: 'app-login',

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BaseComponent } from '../../../../components/base/base.component';
 import { LoadingService } from '../../../../services/loading.service';
 import { UserService } from '../../../../services/user.service';
 
@@ -9,7 +8,7 @@ import { UserService } from '../../../../services/user.service';
 	templateUrl: './news.component.html',
 	styleUrls: ['./news.component.scss']
 })
-export class NewsComponent extends BaseComponent implements OnInit {
+export class NewsComponent implements OnInit {
 
 	public users = [];
 
@@ -18,7 +17,6 @@ export class NewsComponent extends BaseComponent implements OnInit {
 		public UserService: UserService,
 		private LoadingService: LoadingService
 	) {
-		super(Router, UserService);
 		this.users = this.UserService.get('userList');
 	}
 
