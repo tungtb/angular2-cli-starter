@@ -6,6 +6,7 @@ import { CookieModule } from 'ngx-cookie';
 
 
 import { AuthGuard } from '../../services/auth-guard.service';
+import { PreloadingStrategyService } from '../../services/preloading-strategy.service';
 
 import { CoreRoutingModule } from './core-routing.module';
 
@@ -25,6 +26,6 @@ import { LoadingService } from '../../services/loading.service';
 	],
 	declarations: [],
 	exports: [],
-	providers: [AuthGuard, UserService, LoadingService]
+	providers: [AuthGuard, PreloadingStrategyService, UserService, LoadingService]
 })
 export class CoreModule { }
